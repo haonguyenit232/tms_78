@@ -11,7 +11,13 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.countdown
  *= require style
  *= require custom
- *= require jquery.countdown
+ *= require ken-burns
+ *= require overwrite
+ *= require smoothbox
+ *= require login
+ *= require signup
  */
+
