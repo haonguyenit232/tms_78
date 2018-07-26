@@ -1,71 +1,86 @@
 en:
-  hello: "Hello world"
-  title: "Tms_18"
-  users:
-    destroy:
-      delete_success: "User has been delete success"
-      delete_fail: "Cannot delete this user!!!"
-  admin:
-    subjects:
-      create_success: "Subject has been created success"
-      update_success: "Subject has been updated success"
+  role: {trainee: "Trainee", supervisor: "Supervisor", admin: "Administrator"}
   message:
     permission_denied: "Permission Denied!"
+  time:
+    formats:
+      date_user_create: "%d/%m/%Y %H:%M"
+      short: "%B, %d %Y"
+  layouts:
+    application:
+      project_name: "FRAMGIA Training Management System"
+    header:
+      menu_home: "Home"
+      menu_courses: "Courses"
+      menu_subjects: "Subjects"
+      menu_users: "Users"
+      menu_notifications: "Notifications"
+      menu_signin: "Sign in"
+      account_profile: "Profile"
+      account_logout: "Sign out"
+      view_all: "View all"
+      time_now: "Just now"
+      message: "Subject: Ruby's Project 2 has started"
+      admin_section: "Admin Section"
+    footer:
+      framgia_slogan: "FROM THE ASIA TO THE WORLD"
+      branch_hn: "Ha Noi (Head office)"
+      address_hn: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road,
+        Nam Tu Liem District., Ha Noi"
+      branch_laboratory: "Laboratory"
+      address_laboratory: "9F HTP Building, 434 Tran Khat Chan,
+        1km from Bach Khoa University, Ha Noi"
+      branch_hcm: "Ho Chi Minh"
+      address_hcm: "8F Nice building, 467 Dien Bien Phu Str.,
+        Ward 25, Binh Thanh district, HCMC"
+      branch_dn: "Da Nang"
+      address_dn: "6F, Vinh Trung Plaza, 255~257 Hung Vuong Str.,
+        Vinh Trung ward, Thanh Khe district, Da Nang"
+      project_name: "FRAMGIA Training Management System"
+      designed_by: "Designed by "
+      designer: "THQ"
+    admin_application:
+      project_name: "FRAMGIA Training Management System"
+    admin_header:
+      menu_home: "Home"
+      menu_courses: "Courses"
+      menu_subjects: "Subjects"
+      menu_users: "Users"
+      account_profile: "Profile"
+      account_logout: "Sign out"
+      trainee_section: "Trainee Section"
   static_pages:
-    home:
-      GetEverythingRight: "Get Everything Right"
-      cupidatatnonproident: "cupidatat non proident"
-      Previous: "Previous"
-      LatestEvents: "Latest Events"
-      Studie: "Studie"
-      ExpertTeachers: "Expert Teachers"
-      Nullamegestasdiameufelis: "Nullam egestas diam eu felis"
-      Next: "Next"
-      VideoCourses: "Video Courses"
-      Library: "Library"
-      OnlineCourses: "Online Courses"
-      WelcomeToFramgiaVietNam: "Welcome To Framgia Viet Nam"
-      Mycompanyoffered: "My company offered"
-      openacompany: "open a company"
-      Vietnam: "Vietnam is Framgia Japanese IT company specializing
-              in the design, application development, platform games
-              that run on smartphones, social networking platforms,
-              production and application development website.
-              Framgia Vietnam officially established in Hanoi on May 10/2012."
-      Praesent vestibulum molestie lacus: "Praesent vestibulum molestie lacus"
-      Donec: "Donec sagittis interdum tellusplacerat adipiscing"
-      Nullaconsecteturadipiscing: "Nulla consectetur adipiscing"
-      Donecac: "Donec ac rhoncus libero vestibulum aliquet"
-      Erci: "Erci eu tincidunt lacinia sit amet pretium"
-      Monday: "Monday june 16"
-      Proinfermentum: "Proin fermentum diam eu massa blandit,
-                  congue finibus ante pulvinar. Aliquam lacinia odio eros."
-      Tuesday: "Tuesday june 16"
-      Wednesday: "Wednesday june 16"
-      Friday: "Friday june 16"
-      LatestNews: "Latest News"
-      Thursday: "Thursday june 16"
-      Excepteur: "Excepteur sint occaecat cupidatat non proident"
-      Quisque: "Quisque at tellus ullamcorper, pharetra arcu a,
-                suscipit purus. Nullam feugiat in augue in consequat.
-                Sed ac dictum ligula, et pellentesque velit.
-                In gravida eu felis sit amet molestie.
-                Morbi sed ex ac enim finibus vulputate.
-                Cras arcu magna, auctor ornare neque in,
-                finibus tincidunt augue."
-      Morbised: "Morbi sed ex ac enim finibus vulputate."
-      Nullam: "Nullam egestas diam eu felis dignissim,
-                    vitae posuere ex pretium. Morbi quam purus,
-                    rhoncus eget enim sed, laoreet venenatis arcu.
-                    Curabitur vestibulum, orci pulvinar pretium cursus,
-                    diam ante pretium elit,
-                    at finibus nisl ligula vitae enim.
-                    eu eleifend enim condimentum ac."
-      Excepteursint: "Excepteur sint occaecat cupidatat non proident"
-      Quisqueattellus: "Quisque at tellus ullamcorper, pharetra arcu a,
-                suscipit purus. Nullam feugiat in augue in consequat.
-                Sed ac dictum ligula, et pellentesque velit.
-                In gravida eu felis sit amet molestie.
-                Morbi sed ex ac enim finibus vulputate.
-                Cras arcu magna, auctor ornare neque in,
-                finibus tincidunt augue."
+    index:
+      hello: "Hello world!"
+      slide_title: "ARE YOU READY TO MAKE IT AWESOME WITH US?"
+      slide_content: We’re on a mission to be the IT infra for software
+        development. IT has the power to create the future where all our kids
+        have the equal opportunity no matter where they are born.
+        We will utilize the power and determine the future
+        by reinventing groundbreaking services ceaselessly.
+      training_principles: "Our Training Principles"
+      principles_description: "We want to work with the most dedicated startup
+        engineers and designers.We want to help you become the best you can be,
+        alongside talented peers."
+      real_tutorials: "Real Tutorials"
+      real_tutorials_description: "We'll learn how apps like Facebook,
+        Instagram, and Twitter are built."
+      projects: "Projects"
+      projects_description: "You'll build real apps you'll be proud to
+        show to customers and employers."
+      completed_courses: "Completed Courses"
+      trainees: "Trainees"
+      trainers: "Trainers"
+      count_number: "125"
+      about: "About Us"
+      about_description: "Framgia Vietnam is a company 100% Japan funded
+        specializing in design, development applications such as mobile phone
+        software, games, social and website applications."
+  admin:
+    static_pages:
+      index:
+        menu_courses: "Courses"
+        menu_subjects: "Subjects"
+        menu_users: "Users"
+        count_number: "125"
+        go_here: "Go here"

@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require bootstrap
+//= require wow
 //= require turbolinks
-//= require jquery.countdown
+//= require moment
+//= require daterangepicker
+//= require owl.carousel
+//= require growl
