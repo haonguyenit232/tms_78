@@ -1,11 +1,12 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable,
-    :rememberable, :trackable, :validatable
-  devise :omniauthable, omniauth_providers: %I[google_oauth2 facebook]
-  has_many :exams, dependent: :destroy
-  has_many :suggest_questions, dependent: :destroy
+  has_many :activities, dependent: :destroy
+  has_many :user_courses, dependent: :destroy
+  has_many :courses, through: :user_courses
+  has_many :user_subjects, dependent: :destroy
+  has_many :subjects, through: :user_subjects
 
-  enum role: {user: 1, admin: 0}
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable
+
+  enum role: %i(trainee supervisor admin)
 end
