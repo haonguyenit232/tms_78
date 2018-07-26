@@ -1,49 +1,60 @@
-<section id="home">
-  <div id="home-carousel" class="carousel slide" data-interval="false">
-    <ol class="carousel-indicators">
-      <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#home-carousel" data-slide-to="1"></li>
-      <li data-target="#home-carousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item active">
-        <div class="carousel-caption">
-          <div class="animated bounceInRight">
-            <h2><%= t ".hello" %> <br><%= t ".slide_title" %></h2>
-            <p><%= t ".slide_content" %></p>
+<div class="banner">
+  <div id="kb" class="carousel kb_elastic animate_text kb_wrapper"
+    data-ride="carousel" data-interval="6000" data-pause="hover">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <%= link_to image_tag("fram3.jpg", class:"img-responsive") %>
+          <div class="carousel-caption kb_caption">
+            <h3 data-animation="animated flipInX">
+              <%= t ".GetEverythingRight" %>
+            </h3>
+            <h4 data-animation="animated flipInX">
+              <%= t ".cupidatatnonproident" %>
+            </h4>
+          </div>
+        </div>
+        <!-- Second-Slide -->
+        <div class="item">
+          <%= link_to image_tag("fram2.jpg", class:"img-responsive") %>
+          <div class="carousel-caption kb_caption kb_caption_right">
+            <h3 data-animation="animated flipInX">
+              <%= t ".GetEverythingRight" %>
+            </h3>
+            <h4 data-animation="animated flipInX">
+            <%= t ".cupidatatnonproident" %>
+            </h4>
+          </div>
+        </div>
+        <!-- Third-Slide -->
+        <div class="item">
+          <%= link_to image_tag("fram1.jpg", class:"img-responsive") %>
+          <div class="carousel-caption kb_caption kb_caption_center">
+            <h3 data-animation="animated flipInX">
+              <%= t ".GetEverythingRight" %>
+            </h3>
+            <h4 data-animation="animated flipInX">
+              <%= t ".cupidatatnonproident" %>
+            </h4>
           </div>
         </div>
       </div>
-      <div class="item">
-        <div class="carousel-caption">
-          <div class="animated bounceInDown">
-            <h2><%= t ".hello" %> <br><%= t ".slide_title" %></h2>
-            <p><%= t ".slide_content" %></p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="carousel-caption">
-          <div class="animated bounceInUp">
-            <h2><%= t ".hello" %> <br><%= t ".slide_title" %></h2>
-            <p><%= t ".slide_content" %></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <nav id="nav-arrows" class="nav-arrows hidden-xs
-      hidden-sm visible-md visible-lg">
-      <%= link_to "#home-carousel", data: {slide: "prev"},
-        class: "sl-prev hidden-xs" do %>
-        <i class="fa fa-angle-left fa-3x"></i>
-      <% end %>
-      <%= link_to "#home-carousel", data: {slide: "next"},
-        class: "sl-next hidden-xs" do %>
-        <i class="fa fa-angle-right fa-3x"></i>
-      <% end %>
-    </nav>
+      <!-- Left-Button -->
+      <a class="left carousel-control kb_control_left" href="#kb"
+        role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true">
+        </span>
+        <span class="sr-only"><%= t ".Previous" %></span>
+      </a>
+      <!-- Right-Button -->
+      <a class="right carousel-control kb_control_right" href="#kb"
+        role="button" data-slide="next">
+        <span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+        </span>
+        <span class="sr-only"><%= t ".Next" %></span>
+      </a>
   </div>
-</section>
+  <script src="js/custom.js"></script>
+</div>
 <section id="service">
   <div class="container">
     <div class="row">
