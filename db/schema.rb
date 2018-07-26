@@ -10,107 +10,97 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180724122156) do
+ActiveRecord::Schema.define(version: 20180726013143) do
 
-  create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "content"
-    t.boolean "is_correct"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_answers_on_question_id"
-  end
-
-  create_table "exam_answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "content"
-    t.boolean "is_choice"
-    t.bigint "exam_question_id"
-    t.bigint "answer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_exam_answers_on_answer_id"
-    t.index ["exam_question_id"], name: "index_exam_answers_on_exam_question_id"
-  end
-
-  create_table "exam_questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "content"
-    t.boolean "is_correct"
-    t.bigint "exam_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["exam_id"], name: "index_exam_questions_on_exam_id"
-    t.index ["question_id"], name: "index_exam_questions_on_question_id"
-  end
-
-  create_table "exams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "status"
-    t.datetime "started_at"
-    t.integer "spent_time"
-    t.integer "score"
+  create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "content"
+    t.integer "target_type"
+    t.integer "target_id"
+    t.integer "action_type"
     t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "course_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "course_id"
     t.bigint "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subject_id"], name: "index_exams_on_subject_id"
-    t.index ["user_id"], name: "index_exams_on_user_id"
+    t.index ["course_id"], name: "index_course_subjects_on_course_id"
+    t.index ["subject_id"], name: "index_course_subjects_on_subject_id"
   end
 
-  create_table "levels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.integer "question_number"
-    t.bigint "subject_id"
+    t.string "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "image_url"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subject_id"], name: "index_levels_on_subject_id"
-  end
-
-  create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "answer_type"
-    t.text "content"
-    t.bigint "level_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["level_id"], name: "index_questions_on_level_id"
   end
 
   create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.integer "question_number"
     t.integer "duration"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "suggest_answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text "content"
-    t.boolean "is_correct"
-    t.bigint "suggest_question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["suggest_question_id"], name: "index_suggest_answers_on_suggest_question_id"
-  end
-
-  create_table "suggest_questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "status"
-    t.integer "answer_type"
-    t.text "content"
-    t.bigint "user_id"
+  create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "description"
     t.bigint "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subject_id"], name: "index_suggest_questions_on_subject_id"
-    t.index ["user_id"], name: "index_suggest_questions_on_user_id"
+    t.index ["subject_id"], name: "index_tasks_on_subject_id"
+  end
+
+  create_table "user_courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.boolean "is_active", default: false
+    t.bigint "course_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_user_courses_on_course_id"
+    t.index ["user_id"], name: "index_user_courses_on_user_id"
+  end
+
+  create_table "user_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "status", default: 0
+    t.bigint "user_course_id"
+    t.bigint "subject_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_user_subjects_on_subject_id"
+    t.index ["user_course_id"], name: "index_user_subjects_on_user_course_id"
+    t.index ["user_id"], name: "index_user_subjects_on_user_id"
+  end
+
+  create_table "user_tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "task_id"
+    t.bigint "user_id"
+    t.bigint "user_subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_user_tasks_on_task_id"
+    t.index ["user_id"], name: "index_user_tasks_on_user_id"
+    t.index ["user_subject_id"], name: "index_user_tasks_on_user_subject_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.string "chatwork_id"
-    t.integer "role", default: 1
-    t.string "avatar"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
+    t.string "avatar_url"
+    t.integer "role", default: 0
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -120,20 +110,22 @@ ActiveRecord::Schema.define(version: 20180724122156) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "answers", "questions"
-  add_foreign_key "exam_answers", "answers"
-  add_foreign_key "exam_answers", "exam_questions"
-  add_foreign_key "exam_questions", "exams"
-  add_foreign_key "exam_questions", "questions"
-  add_foreign_key "exams", "subjects"
-  add_foreign_key "exams", "users"
-  add_foreign_key "levels", "subjects"
-  add_foreign_key "questions", "levels"
-  add_foreign_key "suggest_answers", "suggest_questions"
-  add_foreign_key "suggest_questions", "subjects"
-  add_foreign_key "suggest_questions", "users"
+  add_foreign_key "activities", "users"
+  add_foreign_key "course_subjects", "courses"
+  add_foreign_key "course_subjects", "subjects"
+  add_foreign_key "tasks", "subjects"
+  add_foreign_key "user_courses", "courses"
+  add_foreign_key "user_courses", "users"
+  add_foreign_key "user_subjects", "subjects"
+  add_foreign_key "user_subjects", "user_courses"
+  add_foreign_key "user_subjects", "users"
+  add_foreign_key "user_tasks", "tasks"
+  add_foreign_key "user_tasks", "user_subjects"
+  add_foreign_key "user_tasks", "users"
 end
