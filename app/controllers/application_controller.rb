@@ -18,14 +18,22 @@ class ApplicationController < ActionController::Base
   def verify_admin
     if current_user.trainee?
       flash[:danger] = t "message.permission_denied"
+<<<<<<< 18090e487c606a0dae0d132c21924f7fd31b1955
       redirect_to root_path
+=======
+      redirect_to root_url
+>>>>>>> confix_login
     end
   end
 
   def verify_admin_only
     unless current_user.admin?
       flash[:warning] = t "message.permission_denied"
+<<<<<<< 18090e487c606a0dae0d132c21924f7fd31b1955
       redirect_to root_path
+=======
+      redirect_to root_url
+>>>>>>> confix_login
     end
   end
 end
