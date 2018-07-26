@@ -2,7 +2,7 @@ class Admin::SubjectsController < ApplicationController
   layout "admin_application"
   before_action :authenticate_user!
   before_action :verify_admin_only
-  load_and_authorize_resource
+  #load_and_authorize_resource
 
   def index; end
 

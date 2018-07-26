@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_user_parameters, if: :devise_controller?
+  rescue_from CanCan::AccessDenied do |exception|
+    render :file => "public/404.html", status: 404, layout: false
+  end
 
   protected
 

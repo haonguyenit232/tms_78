@@ -9,4 +9,9 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable
 
   enum role: {trainee: 0, supervisor: 1, admin: 2}
+  mount_uploader :avatar_url, AvatarUrlUploader
+
+  scope :recent, ->{order created_at: :desc}
+
+  validates :name, presence: true, length: {maximum: 50}
 end

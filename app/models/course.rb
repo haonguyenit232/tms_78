@@ -3,7 +3,6 @@ class Course < ApplicationRecord
   has_many :users, through: :user_courses
   has_many :course_subjects, dependent: :destroy
   has_many :subjects, through: :course_subjects
-
   accepts_nested_attributes_for :course_subjects, allow_destroy: true,
     reject_if: proc {|attributes| attributes[:subject_id].blank? ||
       attributes[:subject_id] == 0}

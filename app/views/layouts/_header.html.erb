@@ -23,7 +23,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
+            <%= link_to user_courses_path do %>
               <i class="fa fa-mortar-board" aria-hidden="true"></i>
               <%= t ".menu_courses" %>
             <% end %>
@@ -79,6 +79,10 @@
             </ul>
           </li>
           <li class="dropdown avatar-dropdown">
+            <%= image_tag current_user.avatar_url.url,
+              class: "img-circle avatar image-avatar-small",
+              data: {toggle: "dropdown"},
+              aria: {haspopup: "true", expanded: "true"} %>
             <span class="nav-name"><%= current_user.name %></span>
             <ul class="dropdown-menu dropdown-menu-custom">
               <% if !current_user.trainee? %>
