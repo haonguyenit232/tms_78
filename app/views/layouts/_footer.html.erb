@@ -1,35 +1,48 @@
-<div class="footer-w3">
+<%= link_to "#", class: "btn btn-primary btn-lg back-to-top", role: "button",
+  id: "back-to-top", data: {toggle: "tooltip", placement: "left"} do %>
+  <span class="glyphicon glyphicon-chevron-up"></span>
+<% end %>
+
+<footer id="footer" class="text-center">
   <div class="container">
-    <div class="footer-grids">
-      <div class="col-md-4 footer-grid">
-        <h4><%= render "static_pages/about" %></h4>
-      </div>
-        <div class="col-md-4 footer-grid">
-          <h4><%= t ".Instagram Posts" %></h4>
-          <div class="footer-grid1">
-            <%= link_to image_tag("w1.jpg", class:"img-responsive") %>
-          </div>
-          <div class="footer-grid1">
-            <%= link_to image_tag("w2.jpg", class:"img-responsive") %>
-          </div>
-          <div class="footer-grid1">
-            <%= link_to image_tag("w4.jpg", class:"img-responsive") %>
-          </div>
-           <div class="footer-grid1">
-             <%= link_to image_tag("w5.jpg", class:"img-responsive") %>
-           </div>
-           <div class="footer-grid1">
-             <%= link_to image_tag("w6.jpg", class:"img-responsive") %>
-           </div>
-           <div class="footer-grid1">
-             <%= link_to image_tag("w2.jpg", class:"img-responsive") %>
-           </div>
-           <div class="clearfix"> </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="col-lg-3 footer-address">
+        <h5><%= t ".branch_hn" %></h5>
+          <p class="footer-address"><%= t ".address_hn" %></p>
         </div>
-      <div class="col-md-4 footer-grid">
-        <h4><%= render "static_pages/help" %></h4>
+        <div class="col-lg-3 footer-address">
+          <h5><%= t ".branch_laboratory" %></h5>
+          <p class="footer-address"><%= t ".address_laboratory" %></p>
+        </div>
+        <div class="col-lg-3 footer-address">
+          <h5><%= t ".branch_hcm" %></h5>
+          <p class="footer-address"><%= t ".address_hcm" %></p>
+        </div>
+        <div class="col-lg-3 footer-address">
+          <h5><%= t ".branch_dn" %></h5>
+          <p class="footer-address"><%= t ".address_dn" %></p>
+        </div>
       </div>
-      <div class="clearfix"></div>
+    </div>
+    <div class="row row-custom">
+      <div class="col-lg-12">
+        <div class="footer-logo wow fadeInDown">
+          <%= image_tag "logo.png" %>
+        </div>
+        <div class="footer-social wow fadeInUp">
+          <h3 style="color: red;"><%= t ".framgia_slogan" %></h3>
+          <ul class="text-center list-inline">
+            <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>
+            <li><a href="#"><i class="fa fa-dribbble fa-lg"></i></a></li>
+          </ul>
+        </div>
+        <div class="copyright">
+          <p style="color: red;"><%= t ".designed_by" %><%= link_to t(".designer"), "#" %></p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</footer>

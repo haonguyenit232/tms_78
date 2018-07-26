@@ -8,5 +8,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
-  enum role: %i(trainee supervisor admin)
+  enum role: {trainee: 0, supervisor: 1, admin: 2}
 end

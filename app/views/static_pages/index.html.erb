@@ -1,0 +1,141 @@
+<div class="banner">
+  <div id="kb" class="carousel kb_elastic animate_text kb_wrapper"
+    data-ride="carousel" data-interval="6000" data-pause="hover">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <%= link_to image_tag("fram3.jpg", class:"img-responsive") %>
+          <div class="carousel-caption kb_caption">
+            <h3 data-animation="animated flipInX">
+              <%= t ".GetEverythingRight" %>
+            </h3>
+            <h4 data-animation="animated flipInX">
+              <%= t ".cupidatatnonproident" %>
+            </h4>
+          </div>
+        </div>
+        <!-- Second-Slide -->
+        <div class="item">
+          <%= link_to image_tag("fram2.jpg", class:"img-responsive") %>
+          <div class="carousel-caption kb_caption kb_caption_right">
+            <h3 data-animation="animated flipInX">
+              <%= t ".GetEverythingRight" %>
+            </h3>
+            <h4 data-animation="animated flipInX">
+            <%= t ".cupidatatnonproident" %>
+            </h4>
+          </div>
+        </div>
+        <!-- Third-Slide -->
+        <div class="item">
+          <%= link_to image_tag("fram1.jpg", class:"img-responsive") %>
+          <div class="carousel-caption kb_caption kb_caption_center">
+            <h3 data-animation="animated flipInX">
+              <%= t ".GetEverythingRight" %>
+            </h3>
+            <h4 data-animation="animated flipInX">
+              <%= t ".cupidatatnonproident" %>
+            </h4>
+          </div>
+        </div>
+      </div>
+      <!-- Left-Button -->
+      <a class="left carousel-control kb_control_left" href="#kb"
+        role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true">
+        </span>
+        <span class="sr-only"><%= t ".Previous" %></span>
+      </a>
+      <!-- Right-Button -->
+      <a class="right carousel-control kb_control_right" href="#kb"
+        role="button" data-slide="next">
+        <span class="glyphicon glyphicon-menu-right" aria-hidden="true">
+        </span>
+        <span class="sr-only"><%= t ".Next" %></span>
+      </a>
+  </div>
+  <script src="js/custom.js"></script>
+</div>
+<section id="service">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title text-center wow fadeInDown">
+          <h2><%= t ".training_principles" %></h2>
+          <p><%= t ".principles_description" %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 wow fadeInLeft">
+        <div class="media">
+          <a href="#" class="pull-left">
+            <%= image_tag "tutorial.png", class: "media-object" %>
+          </a>
+          <div class="media-body">
+            <h3><%= t".real_tutorials" %></h3>
+            <p><%= t ".real_tutorials_description" %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
+        <div class="media">
+          <a href="#" class="pull-left">
+            <%= image_tag "projects.png", class: "media-object" %>
+          </a>
+          <div class="media-body">
+            <h3><%= t ".projects" %></h3>
+            <p><%= t ".projects_description" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="count">
+  <div class="container">
+    <div class="row">
+      <div class="counter-section clearfix">
+        <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-delay="0.5s">
+          <div class="fact-item text-center">
+            <div class="fact-icon">
+              <i class="fa fa-check-square fa-lg"></i>
+            </div>
+            <span><%= t ".count_number" %></span>
+            <p><%= t ".completed_courses" %></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-delay="0.8s">
+          <div class="fact-item text-center">
+            <div class="fact-icon">
+              <i class="fa fa-mortar-board fa-lg"></i>
+            </div>
+            <span><%= t ".count_number" %></span>
+            <p><%= t ".trainees" %></p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-delay="1.1s">
+          <div class="fact-item text-center last">
+            <div class="fact-icon">
+              <i class="fa fa-users fa-lg"></i>
+            </div>
+            <span><%= t ".count_number" %></span>
+            <p><%= t ".trainers" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="section-title section-title-custom text-center wow fadeInUp">
+        <h2><%= t ".about" %></h2>
+        <p><%= t ".about_description" %></p>
+      </div>
+      <div class="about-us text-center wow fadeInDown">
+        <%= image_tag "framgia_logo.jpg", class: "img-responsive" %>
+      </div>
+    </div>
+  </div>
+</section>

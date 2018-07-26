@@ -7,6 +7,9 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body>
+    <%= render "layouts/header" %>
+    <%= render "shared/flash_message.js.erb" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
