@@ -1,6 +1,16 @@
 en:
   hello: "Hello world"
   title: "Tms_18"
+  users:
+    destroy:
+      delete_success: "User has been delete success"
+      delete_fail: "Cannot delete this user!!!"
+  admin:
+    subjects:
+      create_success: "Subject has been created success"
+      update_success: "Subject has been updated success"
+  message:
+    permission_denied: "Permission Denied!"
   static_pages:
     home:
       GetEverythingRight: "Get Everything Right"

@@ -1,0 +1,36 @@
+<%= form_for [:admin, @user] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label :name, t("users.new.label_name") %>
+    <%= f.text_field :name, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, t("users.new.label_email") %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "off",
+      class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off",
+      class: "form-control" %>
+  </div>
+
+  <% User.role.each do |role| %>
+      <div class="inline">
+        <%= f.radio_button :role, role %>
+        <%= f.label :role, value: role %>
+      </div>
+  <% end %>
+
+  <div class="actions">
+    <button class="btn btn-lg btn-primary btn-block btn-signin"
+      type="submit"><%= yield :submit_button %></button>
+  </div>
+<% end %>
